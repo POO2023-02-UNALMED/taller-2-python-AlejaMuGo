@@ -25,7 +25,7 @@ class Auto:
         self.marca=marca
         self.registro=registro
         self.motor = motor
-        self.asientos = [asientos]
+        self.asientos = list(asientos)
     def cantidadAsientos(self):
         contador = 0
         for i in range(len(self.asientos)):
@@ -36,7 +36,7 @@ class Auto:
         iguales = True
         for i in range(len(self.asientos)):
             if type(self.asientos[i]) == Asiento:
-                if self.asientos[i].registro != self.registro and self.asientos[i].registro != self.motor.registro:
+                if self.asientos[i].registro != self.registro and self.asientos[i].registro != self.motor.registro and self.registro != self.motor.registro:
                     iguales = False
         if iguales == True:
             return "Auto original"
