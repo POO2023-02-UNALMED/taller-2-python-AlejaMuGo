@@ -25,7 +25,7 @@ class Auto:
         self.marca=marca
         self.registro=registro
         self.motor = motor
-        self.asientos = [asientos]
+        self.asientos = list(asientos)
     def cantidadAsientos(self):
         contador = 0
         for i in range(len(self.asientos)):
@@ -35,10 +35,10 @@ class Auto:
     def verificarIntegridad(self):
         iguales = True
         for i in range(len(self.asientos)):
-            if type(self.asientos[i]) == Asiento:
-                if self.asientos[i].registro != self.registro:
+            if (type(self.asientos[i]) == Asiento):
+                if (self.asientos[i].registro != self.registro):
                     iguales = False
-        if iguales == True and self.registro == self.motor.registro:
+        if (iguales == True and self.registro == self.motor.registro):
             return "Auto original"
         else:
             return "Las piezas no son originales"
