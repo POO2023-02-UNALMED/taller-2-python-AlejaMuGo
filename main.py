@@ -38,7 +38,6 @@ class Auto:
             if type(self.asientos[i]) == Asiento:
                 if self.asientos[i].registro != self.registro and self.asientos[i].registro != self.motor.registro:
                     iguales = False
-                    break
         if iguales == True:
             return "Auto original"
         else:
